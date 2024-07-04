@@ -21,6 +21,7 @@ from
 group by
 	ds.department;
 ```
+##### Output:
 ![Question 1](outputs/output_of_question_1.png)
 
 #### Question 2: List all employees who have used more than 10 leaves.
@@ -65,6 +66,7 @@ select
 from
 	senior_Analyst_view;
 ```
+##### Output:
 ![Question 3](outputs/output_of_question_3.png)
 
 ### Materialised View:
