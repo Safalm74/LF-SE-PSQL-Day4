@@ -42,6 +42,7 @@ from
 where
 	employee_leave.leave_used > 10;
 ```
+##### Output:
 ![Question 2](outputs/output_of_question_2.png)
 
 
@@ -90,6 +91,7 @@ select
 from
 	day4assignment.emloyees_count_per_department;
 ```
+##### Output:
 ![Question 4](outputs/output_of_question_4.png)
 
 ### Procedures (Stored Procedures):
@@ -123,6 +125,7 @@ where
 and
 	ts.last_name ='ARMEN';
 ```
+##### Output: 
 ![Question 6_1](outputs/output_of_question_6_1.png)
 
 ##### Calling Update Function
@@ -140,6 +143,7 @@ where
 and
 	ts.last_name ='ARMEN';
 ```
+##### Output:
 ![Question 6_2](outputs/output_of_question_6_2.png)
 
 #### Question 7: Create a procedure to calculate the total number of leaves used across all departments.
@@ -165,5 +169,6 @@ call calculate_leaves_across_department();
 ```
 select * from leaves_across_department ;
 ```
+##### Output:
 ![Question 7](outputs/output_of_question_7.png)
 
