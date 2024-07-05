@@ -148,27 +148,52 @@ and
 
 #### Question 7: Create a procedure to calculate the total number of leaves used across all departments.
 ##### Creating Procedure:
+###### Using Materialized view
 ```
-create or replace procedure calculate_leaves_across_department()
+create or replace procedure calculate_leaves_across_department_view()
 language plpgsql
 as $$
 begin 
-	drop materialized view if exists leaves_across_department;
-	create materialized view leaves_across_department as
+	create materialized view if not exists leaves_across_department_view as
 	select  unit as department, sum(leave_used) as Total_leave_used_across_department
 	from table_salary
 	group by unit;
 end;$$;
-
 ```
 ##### Procedure calculate_leaves_across_department()
 ```
-call calculate_leaves_across_department();
+call calculate_leaves_across_department_view();
 ```
 ##### Reading data
 ```
-select * from leaves_across_department ;
+select * from leaves_across_department_view ;
 ```
+
+###### Alternatively, Using table
+```
+create or replace procedure calculate_leaves_across_department_table()
+language plpgsql
+as $$
+begin 
+	create table if not exists leaves_across_department_table(
+		department varchar (50),
+		leave_used_across_department int
+	);
+	truncate leaves_across_department_table;
+	insert into leaves_across_department_table(department ,leave_used_per_department)
+	(select  unit as department, sum(leave_used) as Total_leave_used_across_department from table_salary
+	group by unit);
+end;$$;
+```
+##### Procedure calculate_leaves_across_department()
+```
+call calculate_leaves_across_department_table();
+```
+##### Reading data
+```
+select * from leaves_across_department_table ;
+```
+
 ##### Output:
 ![Question 7](outputs/output_of_question_7.png)
 

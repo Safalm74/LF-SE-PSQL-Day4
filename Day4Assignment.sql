@@ -148,15 +148,36 @@ and
 	ts.last_name ='ARMEN';
 
 --Question 7: Create a procedure to calculate the total number of leaves used across all departments.
-create or replace procedure calculate_leaves_across_department()
+--creating procedure (using materialized view)
+create or replace procedure calculate_leaves_across_department_view()
 language plpgsql
 as $$
 begin 
-	drop materialized view if exists leaves_across_department;
-	create materialized view leaves_across_department as
+	create materialized view if not exists leaves_across_department_view as
 	select  unit as department, sum(leave_used) as Total_leave_used_across_department
 	from table_salary
 	group by unit;
 end;$$;
-call calculate_leaves_across_department();
-select * from leaves_across_department ;
+call calculate_leaves_across_department_view();
+select * from leaves_across_department_view ;
+--creating procedure (using materialized view)
+create or replace procedure calculate_leaves_across_department()
+language plpgsql
+as $$
+begin 
+	create table if not exists leaves_across_department_table(
+		department varchar (50),
+		leave_used_per_department int
+	);
+	truncate leaves_across_department_table;
+	insert into leaves_across_department_table(department ,leave_used_per_department)
+	(select  unit as department, sum(leave_used) as Total_leave_used_across_department from table_salary
+	group by unit);
+end;$$;
+call calculate_leaves_across_department_table();
+select * from leaves_across_department_table ;
+
+
+
+
+
