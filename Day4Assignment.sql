@@ -44,6 +44,8 @@ with
 			ts.salary as salary
 		from
 			table_salary ts
+		where
+			ts.designation='Analyst'
 	)
 select
 	ds.department,

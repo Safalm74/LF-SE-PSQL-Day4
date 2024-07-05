@@ -12,6 +12,8 @@ with
 			ts.salary as salary
 		from
 			table_salary ts
+		where
+			ts.designation='Analyst'
 	)
 select
 	ds.department,
@@ -170,7 +172,7 @@ call calculate_leaves_across_department_view();
 select * from leaves_across_department_view ;
 ```
 
-###### Alternatively, Using table
+##### Alternatively, Using table
 
 ###### Creating Procedure:
 ```
