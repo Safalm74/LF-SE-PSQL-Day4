@@ -22,7 +22,9 @@ select
 from
 	department_salary as ds
 group by
-	ds.department;
+	ds.department
+order by
+	Average_Salary desc;
 ```
 ###### Output:
 ![Question 1](outputs/output_of_question_1.png)
@@ -44,7 +46,9 @@ select
 from
 	employee_leave
 where
-	employee_leave.leave_used > 10;
+	employee_leave.leave_used > 10
+order by 
+	leave_used;
 ```
 ###### Output:
 ![Question 2](outputs/output_of_question_2.png)
@@ -95,7 +99,9 @@ group by
 select
 	*
 from
-	day4assignment.emloyees_count_per_department;
+	emloyees_count_per_department
+order by
+	emloyees_count_per_department.employee_count;
 ```
 ###### Output:
 ![Question 4](outputs/output_of_question_4.png)
