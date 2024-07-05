@@ -53,7 +53,9 @@ select
 from
 	department_salary as ds
 group by
-	ds.department;
+	ds.department
+order by
+	Average_Salary desc;
 
 --Question 2: List all employees who have used more than 10 leaves.
 with
@@ -70,7 +72,9 @@ select
 from
 	employee_leave
 where
-	employee_leave.leave_used > 10;
+	employee_leave.leave_used > 10
+order by 
+	leave_used;
 
 --------------------------------------------Views:------------------
 --Question 3: Create a view to show the details of all Senior Analysts.
