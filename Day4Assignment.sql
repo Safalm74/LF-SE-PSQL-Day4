@@ -110,7 +110,9 @@ group by
 select
 	*
 from
-	day4assignment.emloyees_count_per_department;
+	emloyees_count_per_department
+order by
+	emloyees_count_per_department.employee_count;
 
 ---------------------------------------------Procedures (Stored Procedures):
 
