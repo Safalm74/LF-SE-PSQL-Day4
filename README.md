@@ -3,6 +3,7 @@
 ### Common Table Expressions (CTEs):
 
 #### Question: 1  Calculate the average salary by department for all Analysts.
+###### Answer:
 ```
 with
 	department_salary as ---returns departments and salaries
@@ -27,6 +28,7 @@ group by
 ![Question 1](outputs/output_of_question_1.png)
 
 #### Question 2: List all employees who have used more than 10 leaves.
+##### Answer:
 ```
 with
 	employee_leave as (
@@ -51,6 +53,7 @@ where
 ### View:
 
 #### Question 3: Create a view to show the details of all Senior Analysts.
+##### Answer:
 ###### Creating View:
 ```
 create view
@@ -74,6 +77,7 @@ from
 
 ### Materialised View:
 #### Question 4: Create a materialized view to store the count of employees by department.
+##### Answer:
 ###### Creating View:
 ```
 create materialized view emloyees_count_per_department as
@@ -98,6 +102,7 @@ from
 
 ### Procedures (Stored Procedures):
 #### Question 6: Create a procedure to update an employee's salary by their first name and last name.
+##### Answer:
 ###### Creating Procedure:
 ```
 create or replace procedure update_salary(
@@ -149,6 +154,7 @@ and
 ![Question 6_2](outputs/output_of_question_6_2.png)
 
 #### Question 7: Create a procedure to calculate the total number of leaves used across all departments.
+##### Answer:
 
 ##### Using Materialized view
 ###### Creating Procedure:
