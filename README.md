@@ -1,6 +1,6 @@
 # PSQL Assignment 4
 
-### Common Table Expressions (CTEs):
+### A: Common Table Expressions (CTEs):
 
 #### Question: 1  Calculate the average salary by department for all Analysts.
 ###### Answer:
@@ -50,7 +50,7 @@ where
 ![Question 2](outputs/output_of_question_2.png)
 
 
-### View:
+### B: View:
 
 #### Question 3: Create a view to show the details of all Senior Analysts.
 ##### Answer:
@@ -75,7 +75,7 @@ from
 ###### Output:
 ![Question 3](outputs/output_of_question_3.png)
 
-### Materialised View:
+### C: Materialised View:
 #### Question 4: Create a materialized view to store the count of employees by department.
 ##### Answer:
 ###### Creating View:
@@ -100,7 +100,7 @@ from
 ###### Output:
 ![Question 4](outputs/output_of_question_4.png)
 
-### Procedures (Stored Procedures):
+### D: Procedures (Stored Procedures):
 #### Question 6: Create a procedure to update an employee's salary by their first name and last name.
 ##### Answer:
 ###### Creating Procedure:
